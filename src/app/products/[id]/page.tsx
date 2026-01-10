@@ -28,7 +28,7 @@ async function getProduct(id: string): Promise<
         if (!data?.id) {
             return {
                 success: false,
-                error: 'Invalid product data received',
+                error: 'Invalid product data received ',
             };
         }
 

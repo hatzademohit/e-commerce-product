@@ -1,3 +1,4 @@
+'use client';
 import ProductGrid from '@/components/product/ProductGrid';
 import { Product } from '@/types/product';
 import { API_BASE_URL } from '@/lib/api';

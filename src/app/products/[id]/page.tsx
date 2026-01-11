@@ -1,3 +1,4 @@
+'use client';
 import { API_BASE_URL } from '@/lib/api';
 import { Product } from '@/types/product';
 
@@ -13,7 +14,7 @@ async function getProduct(id: string): Promise<
 > {
     try {
         // const res = await fetch(`${API_BASE_URL}/products/${id}`, { /* because of not working in netlify */
-        const res = await fetch('https://fakestoreapi.com/products/${id}', {
+        const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
             cache: 'no-store',
         });
 

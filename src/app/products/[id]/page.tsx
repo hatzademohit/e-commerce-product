@@ -2,24 +2,19 @@
 
 import { Product } from '@/types/product';
 import { useEffect, useState } from 'react';
+import { API_BASE_URL } from '@/lib/api';
+import { useParams } from 'next/navigation';
 
-interface ProductDetailsPageProps {
-    params: {
-        id: string;
-    };
-}
-
-export default function ProductDetailsPage({
-    params,
-}: ProductDetailsPageProps) {
-    const { id } = params;
+export default function ProductDetailsPage() {
+    const params = useParams();
+    const id = params?.id as string;
 
     const [product, setProduct] = useState<Product | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
+        fetch(`${API_BASE_URL}/products/${id}`)
             .then(res => {
                 if (!res.ok) throw new Error(`Status ${res.status}`);
                 return res.json();

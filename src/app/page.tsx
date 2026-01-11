@@ -3,6 +3,7 @@
 import ProductGrid from '@/components/product/ProductGrid';
 import { Product } from '@/types/product';
 import { useEffect, useState } from 'react';
+import { API_BASE_URL } from '@/lib/api';
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -10,7 +11,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch(`${API_BASE_URL}/products`)
       .then(res => {
         if (!res.ok) throw new Error(`Status ${res.status}`);
         return res.json();

@@ -1,9 +1,9 @@
-module.exports = {
-  env: {
-    NEXT_PUBLIC_API_BASE_URL: 'https://fakestoreapi.com',
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['fakestoreapi.com'],
   },
 };
+
+module.exports = nextConfig;

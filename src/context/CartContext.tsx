@@ -92,7 +92,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
     const isFavorite = (id: number) => favorites.includes(id);
 
-
     return (
         <CartContext.Provider
             value={{

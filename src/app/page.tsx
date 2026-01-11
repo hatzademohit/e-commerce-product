@@ -8,7 +8,8 @@ type ProductsResult =
 
 async function getProducts(): Promise<ProductsResult> {
   try {
-    const res = await fetch(`${API_BASE_URL}/products`, {
+    // const res = await fetch(`${API_BASE_URL}/products`, {  /* because of not working in netlify */
+    const res = await fetch('https://fakestoreapi.com/products', {
       cache: 'no-store',
     });
 

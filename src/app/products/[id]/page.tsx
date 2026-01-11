@@ -12,7 +12,8 @@ async function getProduct(id: string): Promise<
     | { success: false; error: string }
 > {
     try {
-        const res = await fetch(`${API_BASE_URL}/products/${id}`, {
+        // const res = await fetch(`${API_BASE_URL}/products/${id}`, { /* because of not working in netlify */
+        const res = await fetch('https://fakestoreapi.com/products/${id}', {
             cache: 'no-store',
         });
 

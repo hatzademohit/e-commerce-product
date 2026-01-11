@@ -1,4 +1,3 @@
-'use client';
 import ProductGrid from '@/components/product/ProductGrid';
 import { Product } from '@/types/product';
 import { API_BASE_URL } from '@/lib/api';
@@ -6,7 +5,7 @@ import { API_BASE_URL } from '@/lib/api';
 type ProductsResult =
   | { success: true; data: Product[] }
   | { success: false; error: string };
-
+export const dynamic = 'force-dynamic';
 async function getProducts(): Promise<ProductsResult> {
   try {
     // const res = await fetch(`${API_BASE_URL}/products`, {  /* because of not working in netlify */

@@ -7,7 +7,7 @@ interface ProductDetailsPageProps {
         id: string;
     };
 }
-
+export const dynamic = 'force-dynamic';
 async function getProduct(id: string): Promise<
     | { success: true; data: Product }
     | { success: false; error: string }

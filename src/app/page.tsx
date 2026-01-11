@@ -4,6 +4,7 @@ import ProductGrid from '@/components/product/ProductGrid';
 import { Product } from '@/types/product';
 import { useEffect, useState } from 'react';
 import { API_BASE_URL } from '@/lib/api';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -52,6 +53,7 @@ export default function HomePage() {
     <section>
       <h1 className="text-2xl font-bold mb-6">Products</h1>
       <ProductGrid products={products} />
+      <ScrollToTop />
     </section>
   );
 }
